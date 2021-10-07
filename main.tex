@@ -1,15 +1,7 @@
-% для использования в курсе 
-% <<Документы и презентации в LaTeX>>, записанном НИУ ВШЭ
-% для Coursera.org: http://coursera.org/course/latex .
-% Вы можете изменять, использовать, распространять
-% этот документ любым способом по своему усмотрению. 
-% В качестве благодарности автору вы можете сохранить 
-% в начале документа данный текст или просто ссылку на
-% http://coursera.org/course/latex
-% Исходная версия шаблона --- 
-% https://www.writelatex.com/coursera/latex/1.2
+%Программа и методика испытаний прототипа HERMES 
+%ООО "Вымпелком-ИТ" 2021г
 
-\documentclass[a4paper,12pt]{article} % добавить leqno в [] для нумерации слева
+\documentclass[a4paper,12pt]{article}
 
 %%% Работа с русским языком
 \usepackage{cmap}					% поиск в PDF
@@ -18,259 +10,26 @@
 \usepackage[utf8]{inputenc}			% кодировка исходного текста
 \usepackage[english,russian]{babel}	% локализация и переносы
 
-%%% Дополнительная работа с математикой
-\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
-\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
-
-%% Номера формул
-%\mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
-
 %% Шрифты
 \usepackage{euscript}	 % Шрифт Евклид
 \usepackage{mathrsfs} % Красивый матшрифт
 
-%% Свои команды
-\DeclareMathOperator{\sgn}{\mathop{sgn}}
-
-%% Перенос знаков в формулах (по Львовскому)
-\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
-	{\hbox{$\mathsurround=0pt #1$}}{}}
+\linespread{1.5} % интервал между строк
 
 %%% Заголовок
-\author{\LaTeX{} в Вышке}
-\title{1.2 Математика в \LaTeX}
-\date{\today}
+\author{Рогова О.А.}
+\title{ПРОГРАММА И МЕТОДИКА ИСПЫТАНИЙ}
+\date{\today} 
+%\gitVtag{0.1} 
 
-\begin{document} % конец преамбулы, начало документа
-	
+\begin{document}
 	\maketitle
 	
-	Первый         абзац.
+	\section{ВВЕДЕНИЕ}
 	
-	Второй абзац.
-	$2 +    2 =   4   $. Текст абзаца.
-	\[  2+2=4  \]
+	\section{ТРЕБОВАНИЯ К ТЕСТИРОВАНИЮ}
 	
-	$2,4$, $(2, 4)$
+	\section{СТРАТЕГИЯ ТЕСТИРОВАНИЯ}
 	
-	Текст текст текст текст текст текст текст текст текст текст текст $1\hm{+}2+3+4+5+6=21$
-	
-	$3+ 3 =6 $. Текст
-	
-	\begin{equation}\label{eq:mrmc}
-		MR=MC
-	\end{equation}
-	
-	
-	\eqref{eq:mrmc}  на стр. \pageref{eq:mrmc} --- условие максимизации прибыли.
-	
-	
-	\section{Нюансы работы с формулами}
-	
-	\subsection{Дроби}
-	
-	\[\frac{1+\dfrac{4}{2}}{6} = 0,5\]
-	
-	\subsection{Скобки}
-	
-	\[ \left(2+\frac{9}{3}\right) \times 5 = 25 \]
-	
-	\[  [2+3]  \]
-	
-	\[ \{2+3\}  \]
-	
-	\subsection{Стандартные функции}
-	
-	$\sin x = 0$, $\cos x = 1$, $\ln x = 5$
-	
-	$\sgn  x = 1$
-	
-	\subsection{Символы}
-	
-	$2\times 2 \ne 5$
-	
-	$A \cap B$, $A \cup B$
-	
-	\subsection{Диакритические знаки}
-	
-	$\overline{456789xyz}=5$, $\widetilde{eurhkjs7} = 8$
-	
-	\subsection{Буквы других алфавитов}
-	
-	$\tg \Phi = 1$
-	
-	$\epsilon$, $\phi$
-	
-	$\varepsilon$, $\varphi$
-	
-	\section{Формулы в несколько строк}
-	
-	\subsection{Очень длинная формула}
-	
-	\begin{multline}
-		1+ 2+3+4+5+6+7+\dots + \\ 
-		+ 50+51+52+53+54+55+56+57 + \dots + \\ 
-		+ 96+97+98+99+100=5050 \tag{S} \label{eq:sum}
-	\end{multline}
-	
-	
-	\subsection{Несколько формул}
-	
-	\begin{align*}
-		2\times 2 &= 4 & 6\times 8 &= 48 \\
-		3\times 3 &= 9 & a+b &= c\\
-		10 \times 65464 &= 654640 & 3/2&=1,5
-	\end{align*}
-	
-	\begin{equation}
-		\begin{aligned}
-			2\times 2 &= 4 & 6\times 8 &= 48 \\
-			3\times 3 &= 9 & a+b &= c\\
-			10 \times 65464 &= 654640 & 3/2&=1,5
-		\end{aligned}
-	\end{equation}
-	
-	\subsection{Системы уравнений}
-	
-	\[
-	\left\{
-	\begin{aligned}
-		2\times x &= 4  \\
-		3\times y &= 9\\
-		10 \times 65464 &= z\\
-	\end{aligned}
-	\right.
-	\]
-	
-	\[
-	|x|=\begin{cases}
-		x, &\text{если }  x \ge 0 \\
-		-x, &\text{если } x<0
-	\end{cases}
-	\]
-	
-	\section{Матрицы}
-	
-	\[
-	\begin{pmatrix}
-		a_{11} & a_{12} & a_{13} \\
-		a_{21} & a_{22} & a_{23}
-	\end{pmatrix}
-	\]
-	
-	\[
-	\begin{vmatrix}
-		a_{11} & a_{12} & a_{13} \\
-		a_{21} & a_{22} & a_{23}
-	\end{vmatrix}
-	\]
-	
-	\[
-	\begin{bmatrix}
-		a_{11} & a_{12} & a_{13} \\
-		a_{21} & a_{22} & a_{23}
-	\end{bmatrix}
-	\]
-	
-	test \begin{equation}
-		2+2=4
-	\end{equation}
-
-test $2+2=4$.
-	
-	$ \{\} [] () | \backslash / \% \& \$ $ 
-	
-	\[\frac{\partial f (x ,y)}{\partial x} = \alpha (x,y)
-	\Rightarrow \int \alpha( x,y) dx = f(x, y) + C.\]
-	
-	%\[x^y^z\]
-	\[\mathbf{x}=\frac{-1+\frac{1}{2}}
-	{3+\left(\cfrac{5}{11}\right)^12}\]
-	
-	\[\mathbf x=\frac{-1+\frac12}
-	{3+(\cfrac{5}{11})^{12}}\]
-	
-	\[\mathbf x=\frac{-1+\frac12}
-	{3+\left(\cfrac{5}{11}\right)^{12}}\]
-	
-	$\mathbf x=\frac{-1+\frac12}
-	{3+\left(\cfrac{5}{11}\right)^{12}}$
-	
-	1.
-	
-	%\begin{aligned}
-	%	f(x)=5x\\
-	%	g(x)=7x
-	%\end{aligned} 
-	
-	2.
-	
-	\begin{equation}
-		f(x)=5x\\
-		g(x)=7x
-	\end{equation} 
-
-$\geqslant$
-
-$\cdot$
-
-$\notin$
-
-$\Rightarrow$
-
-$\in$
-
-$\equiv$
-
-$\le$
-
-$\leftarrow$
-
-$\sim$
-
-$\cap$
-
-\[\left[ 
-\begin{aligned} 
-	& x+1=1\\ 
-	& \ldots\\ 
-	& x+ N = N 
-\end{aligned} 
-\right.\] 
-
-\[\left\[ 
-\begin{aligned} 
-	x+1=1\\ 
-	\ldots\\ 
-	x+ N = N 
-\end{aligned} 
-\right.\] 
-
-	3.
-	
-	\begin{equation*}
-		\begin{aligned}
-			f(x)=5x\\
-			g(x)=7x\end{aligned}
-	\end{equation*} 
-	
-	4.
-	
-	\begin{equation}
-		\begin{aligned}
-			f(x)=5x\\
-			g(x)=7x
-		\end{aligned}
-	\end{equation}
-
-5. 
-
-\begin{align}
-	f(x)=5x\\
-	g(x)=7x
-\end{align}
-
-
-	В уравнении \eqref{eq:sum} на стр. \pageref{eq:sum} много слагаемых.
-	
-\end{document} % конец документа
+	\section{РЕСУРСЫ}
+\end{document}
