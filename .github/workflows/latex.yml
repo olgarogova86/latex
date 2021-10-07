@@ -1,6 +1,9 @@
 name: Build and deploy latex sources to GitHub Pages
 
-on: push
+on: 
+  push:
+     tags:
+      - '*.*'
 
 jobs:
 
@@ -52,4 +55,4 @@ jobs:
 
         # Здесь это <working_directory>/<jobname>.pdf
 
-        path: latex_sources/my_doc.pdf
+        path: ./my_doc.pdf
